@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-gold: var(--gold);
+  --color-henna: var(--henna);
+  --color-beige: var(--beige);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --tracking-widest: 0.3em;
+  
+  --animate-spin-slow: spin-slow 10s linear infinite;
+  
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  @keyframes sweep {
+    0% { transform: translateX(-100%) rotate(-45deg); }
+    10% { transform: translateX(200%) rotate(-45deg); }
+    100% { transform: translateX(200%) rotate(-45deg); }
   }
 }
 
+.draw-stroke-fast {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Cinematic Image Overlay (Rule 24 & 25) */
+@layer utilities {
+  .cinematic-image-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* Vignette and warm film tone */
+    background: radial-gradient(circle at center, transparent 30%, rgba(10, 8, 7, 0.8) 100%),
+                linear-gradient(45deg, rgba(82, 54, 34, 0.2), rgba(15, 13, 11, 0.1));
+    mix-blend-mode: multiply;
+  }
+  
+  .cinematic-image-layer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* Ultra subtle film grain */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+  }
+}
+
+:root {
+  --background: #0f0d0b;
+  --foreground: #f5f2eb;
+  --gold: #C89B5C;
+  --henna: #8C3B24;
+  --beige: #DCD1C0;
+}
+
+/* Base styles for lenis smooth scrolling and full height */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.custom-cursor-active {
+  cursor: none;
+}
+
+/* Hide scrollbar for cinematic feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

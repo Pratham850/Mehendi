@@ -112,7 +112,7 @@ export default function Services() {
           {artistConfig.services.map((service, idx) => (
             <div key={idx} className={`service-row flex flex-col ${idx % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} items-center gap-12 lg:gap-24`}>
               {/* Image with parallax and crop reveal */}
-              <div className="w-full md:w-1/2 aspect-[4/5] relative group cursor-none" data-cursor="view">
+              <div className="w-full md:w-1/2 aspect-[4/5] relative group hide-cursor" data-cursor="view">
                 <div className="service-img-container w-full h-full relative overflow-hidden">
                   <div className="absolute inset-0 bg-[#2a1b12] z-0" />
                   <img 

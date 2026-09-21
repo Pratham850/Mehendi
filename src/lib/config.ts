@@ -48,7 +48,7 @@ export const artistConfig = {
     }
   ],
   contact: {
-    whatsapp: "+1234567890",
+    whatsapp: "6282076811",
     email: "hello@cussentmayya.com",
     instagram: "@cussentmayyasmehandi",
     location: "New York & Worldwide"

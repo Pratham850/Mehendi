@@ -112,6 +112,7 @@ export default function Portfolio() {
 
   // 3D Perspective Mouse Tilt (Rule 17)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (window.innerWidth < 768) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
@@ -178,7 +179,7 @@ export default function Portfolio() {
         {/* Masonry Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[300px] relative z-20"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[250px] md:auto-rows-[300px] relative z-20"
         >
           <AnimatePresence mode="popLayout">
             {!isTransitioning && filteredItems.map((item, i) => {
@@ -201,7 +202,7 @@ export default function Portfolio() {
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
                   className={cn(
-                    "portfolio-item relative group cursor-none will-change-transform",
+                    "portfolio-item relative group hide-cursor will-change-transform",
                     item.type === "portrait" && "row-span-2",
                     item.type === "landscape" && "col-span-1 md:col-span-2",
                     item.type === "square" && "row-span-1 col-span-1"

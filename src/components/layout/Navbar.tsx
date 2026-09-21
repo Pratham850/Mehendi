@@ -68,7 +68,7 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-foreground relative z-50 p-2 -mr-2"
+            className="md:hidden text-foreground relative z-50 p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -89,7 +89,7 @@ export default function Navbar() {
             animate={{ opacity: 1, clipPath: "circle(150% at 100% 0%)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 100% 0%)" }}
             transition={{ duration: 0.7, ease: [0.32, 0, 0.67, 0] }}
-            className="fixed inset-0 z-40 bg-[#0a0807] flex flex-col justify-center px-8 md:hidden"
+            className="fixed inset-0 z-40 bg-[#0a0807] flex flex-col justify-center px-8 md:hidden overflow-hidden"
           >
             {/* Background motif for menu */}
             <svg viewBox="0 0 100 100" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] opacity-5 pointer-events-none" fill="none" stroke="var(--gold)" strokeWidth="0.2">

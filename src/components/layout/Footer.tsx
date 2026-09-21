@@ -94,9 +94,9 @@ export default function Footer() {
       </div>
       
       <div className="flex gap-8 text-foreground/50 text-xs tracking-widest uppercase mb-12">
-        <a href={`https://instagram.com/${artistConfig.contact.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="footer-link hover:text-gold transition-colors duration-500 cursor-none" data-cursor="hover">Instagram</a>
-        <a href={`https://wa.me/${artistConfig.contact.whatsapp.replace(/\+/g, '')}`} target="_blank" rel="noreferrer" className="footer-link hover:text-gold transition-colors duration-500 cursor-none" data-cursor="hover">WhatsApp</a>
-        <a href={`mailto:${artistConfig.contact.email}`} className="footer-link hover:text-gold transition-colors duration-500 cursor-none" data-cursor="hover">Email</a>
+        <a href={`https://instagram.com/${artistConfig.contact.instagram.replace('@', '')}`} target="_blank" rel="noreferrer" className="footer-link hover:text-gold transition-colors duration-500 hide-cursor min-h-[44px] flex items-center justify-center" data-cursor="hover">Instagram</a>
+        <a href={`https://wa.me/${artistConfig.contact.whatsapp.replace(/\+/g, '')}`} target="_blank" rel="noreferrer" className="footer-link hover:text-gold transition-colors duration-500 hide-cursor min-h-[44px] flex items-center justify-center" data-cursor="hover">WhatsApp</a>
+        <a href={`mailto:${artistConfig.contact.email}`} className="footer-link hover:text-gold transition-colors duration-500 hide-cursor min-h-[44px] flex items-center justify-center" data-cursor="hover">Email</a>
       </div>
       
       <div className="footer-link text-foreground/30 text-[10px] tracking-[0.3em] uppercase">

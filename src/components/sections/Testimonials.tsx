@@ -115,11 +115,14 @@ export default function Testimonials() {
             <button
               key={i}
               onClick={() => setCurrentIndex(i)}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-500 cursor-none ${
-                i === currentIndex ? "bg-gold scale-150" : "bg-gold/30 hover:bg-gold/60"
-              }`}
+              className="w-[44px] h-[44px] flex items-center justify-center hide-cursor"
               data-cursor="hover"
-            />
+              aria-label={`Go to slide ${i + 1}`}
+            >
+              <span className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
+                i === currentIndex ? "bg-gold scale-150" : "bg-gold/30 hover:bg-gold/60"
+              }`} />
+            </button>
           ))}
         </div>
       </div>

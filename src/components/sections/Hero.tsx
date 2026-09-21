@@ -20,6 +20,7 @@ export default function Hero() {
   useEffect(() => {
     if (!mounted || !imageContainerRef.current) return;
     const handleMouseMove = (e: MouseEvent) => {
+      if (window.innerWidth < 768) return;
       const { clientX, clientY } = e;
       const xPos = (clientX / window.innerWidth - 0.5) * 20; // max 20px movement
       const yPos = (clientY / window.innerHeight - 0.5) * 20;
@@ -166,20 +167,20 @@ export default function Hero() {
             More Than Mehendi
           </div>
 
-          <div className="w-full max-w-xl h-40 md:h-64 relative mb-10">
+          <div className="w-full max-w-xl aspect-[2/1] relative mb-10">
             <svg
               ref={textSvgRef}
               viewBox="0 0 600 300"
               className="w-full h-full drop-shadow-2xl overflow-visible"
               preserveAspectRatio="xMinYMid meet"
             >
-              <text x="0" y="25%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)]" stroke="var(--foreground)" strokeWidth="1.5" fill="var(--foreground)">
+              <text x="0" y="30%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)]" stroke="var(--foreground)" strokeWidth="1.5" fill="var(--foreground)">
                 CUSSENT
               </text>
-              <text x="0" y="60%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)]" stroke="var(--foreground)" strokeWidth="1.5" fill="var(--foreground)">
+              <text x="0" y="65%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)]" stroke="var(--foreground)" strokeWidth="1.5" fill="var(--foreground)">
                 MAYYA&apos;S
               </text>
-              <text x="0" y="95%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)] text-gold" stroke="var(--gold)" strokeWidth="1.5" fill="var(--gold)">
+              <text x="0" y="100%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)] text-gold" stroke="var(--gold)" strokeWidth="1.5" fill="var(--gold)">
                 MEHENDI
               </text>
             </svg>
@@ -201,7 +202,7 @@ export default function Hero() {
 
         {/* RIGHT 55%: Cinematic Mehendi Image */}
         <div className="w-full md:w-[55%] h-[60vh] md:h-[85vh] relative flex items-center justify-end">
-          <div ref={imageContainerRef} className="hero-image-container w-full h-full relative overflow-hidden rounded-sm cursor-none" data-cursor="view">
+          <div ref={imageContainerRef} className="hero-image-container w-full h-full relative overflow-hidden rounded-sm hide-cursor" data-cursor="view">
             
             {/* Layer 1: Dark Base */}
             <div className="parallax-bg absolute inset-0 bg-[#050403] z-0" />

@@ -109,7 +109,7 @@ export default function ArtistSection() {
         01 — THE ARTIST
       </div>
 
-      <div ref={imageContainerRef} className="relative w-full max-w-md lg:max-w-xl aspect-[4/5] mb-12 group cursor-none" data-cursor="hover">
+      <div ref={imageContainerRef} className="relative w-full max-w-md lg:max-w-xl aspect-[4/5] mb-12 group hide-cursor" data-cursor="hover">
         
         {/* SVG Decorative frame (Rule 13) */}
         <div className="artist-frame absolute -inset-16 z-20 pointer-events-none opacity-80 mix-blend-screen transition-transform duration-700 group-hover:scale-105">

@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/ui/CustomCursor";
-import CinematicLoader from "@/components/ui/CinematicLoader";
+import HandMandalasIntro from "@/components/ui/HandMandalasIntro";
 import MehendiTrail from "@/components/ui/MehendiTrail";
 import MehendiScrollLine from "@/components/ui/MehendiScrollLine";
 
@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cussent Mayya's Mehendi | Luxury Mehendi Artist",
+  title: "Hand Mandalas | Mehendi Artist Srijana",
   description: "Bespoke Mehendi artistry for the modern bride. Cinematic, elegant, and timeless.",
 };
 
@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${cormorant.variable} antialiased`}>
       <body className="font-sans selection:bg-gold/30 selection:text-white">
         <SmoothScroll>
-          <CinematicLoader />
+          <HandMandalasIntro />
           <CustomCursor />
           <MehendiTrail />
           <MehendiScrollLine />

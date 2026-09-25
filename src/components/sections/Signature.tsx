@@ -59,7 +59,7 @@ export default function Signature() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 px-6 md:px-12 bg-[#0f0d0b] relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-screen border-y border-gold/10">
+    <section ref={containerRef} className="py-32 px-6 md:px-12 bg-[#0D0A08] relative z-10 overflow-hidden flex flex-col items-center justify-center min-h-screen border-y border-gold/10">
       <div className="absolute top-20 left-6 md:left-12 z-20 font-sans text-xs tracking-widest text-gold/60 uppercase">
         02 — THE SIGNATURE
       </div>

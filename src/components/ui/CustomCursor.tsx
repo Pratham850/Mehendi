@@ -84,7 +84,7 @@ export default function CustomCursor() {
 
       {/* State: View - Delicate Mehendi circle with "VIEW" */}
       <div className={cn(
-        "absolute w-16 h-16 border-[0.5px] border-gold rounded-full transition-all duration-500 flex flex-col items-center justify-center bg-[#0f0d0b]/40 backdrop-blur-sm",
+        "absolute w-16 h-16 border-[0.5px] border-gold rounded-full transition-all duration-500 flex flex-col items-center justify-center bg-[#0D0A08]/40 backdrop-blur-sm",
         cursorType === 'view' ? "scale-100 opacity-100" : "scale-0 opacity-0"
       )}>
         <span className="text-[8px] text-gold tracking-widest uppercase">View</span>

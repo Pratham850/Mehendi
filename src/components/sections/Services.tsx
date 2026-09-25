@@ -78,7 +78,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" ref={containerRef} className="py-32 px-4 md:px-12 bg-[#0a0807] relative z-10 overflow-hidden">
+    <section id="services" ref={containerRef} className="py-32 px-4 md:px-12 bg-[#0D0A08] relative z-10 overflow-hidden">
       
       {/* Sticky Background Motif */}
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center opacity-5">
@@ -114,7 +114,7 @@ export default function Services() {
               {/* Image with parallax and crop reveal */}
               <div className="w-full md:w-1/2 aspect-[4/5] relative group hide-cursor" data-cursor="view">
                 <div className="service-img-container w-full h-full relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[#2a1b12] z-0" />
+                  <div className="absolute inset-0 bg-[#21150F] z-0" />
                   <img 
                     src={service.image} 
                     alt={service.title}

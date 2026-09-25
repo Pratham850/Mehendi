@@ -63,7 +63,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={containerRef} className="py-32 px-6 md:px-12 bg-[#0a0807] text-center relative overflow-hidden flex flex-col items-center">
+    <footer ref={containerRef} className="py-32 px-6 md:px-12 bg-[#0D0A08] text-center relative overflow-hidden flex flex-col items-center">
       
       {/* Final Ornament Drawing */}
       <div className="w-24 h-48 mb-8">
@@ -80,15 +80,27 @@ export default function Footer() {
         <svg viewBox="0 0 600 100" className="w-full h-full overflow-visible">
           <text 
             x="50%" 
-            y="50%" 
+            y="35%" 
             textAnchor="middle" 
             dominantBaseline="middle"
-            className="signature-path font-serif italic text-4xl md:text-6xl"
+            className="signature-path font-serif text-3xl md:text-5xl tracking-[0.2em]"
             stroke="var(--foreground)"
             strokeWidth="1"
             fill="var(--foreground)"
           >
-            {artistConfig.brandName}
+            HAND MANDALAS
+          </text>
+          <text 
+            x="50%" 
+            y="70%" 
+            textAnchor="middle" 
+            dominantBaseline="middle"
+            className="signature-path font-sans italic text-xs md:text-sm tracking-[0.4em] uppercase text-gold"
+            stroke="var(--gold)"
+            strokeWidth="0.5"
+            fill="var(--gold)"
+          >
+            BY SRIJANA
           </text>
         </svg>
       </div>

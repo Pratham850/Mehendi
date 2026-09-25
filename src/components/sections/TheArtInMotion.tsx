@@ -57,7 +57,7 @@ export default function TheArtInMotion() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-screen bg-[#0f0d0b] py-32 px-6 flex flex-col items-center justify-center overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-screen bg-[#0D0A08] py-32 px-6 flex flex-col items-center justify-center overflow-hidden">
       
       <div className="absolute top-20 left-6 md:left-12 z-20 font-sans text-xs tracking-widest text-gold/60 uppercase">
         02 — THE ART IN MOTION
@@ -65,7 +65,7 @@ export default function TheArtInMotion() {
 
       <div className="w-full max-w-5xl aspect-video md:aspect-[21/9] relative z-10 group cursor-none" data-cursor="view">
         
-        <div className="motion-img-wrapper absolute inset-0 overflow-hidden rounded-sm bg-[#0a0807]">
+        <div className="motion-img-wrapper absolute inset-0 overflow-hidden rounded-sm bg-[#0D0A08]">
           <img 
             src={siteImages.application.main} 
             alt="Applying Mehendi"

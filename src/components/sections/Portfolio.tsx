@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { siteImages } from "@/lib/siteImages";
 import gsap from "gsap";
 
-const categories = ["ALL", "BRIDAL", "ARABIC", "INDO-ARABIC", "MINIMAL", "PARTY", "FEET", "CUSTOM"];
+const categories = ["ALL", "BRIDAL", "ARABIC", "TRADITIONAL", "MINIMAL", "INDO-ARABIC", "FEET", "CUSTOM"];
 
 const renderBorder = (category: string) => {
   switch (category) {
@@ -60,6 +60,17 @@ export default function Portfolio() {
   const filteredItems = siteImages.portfolio.filter(
     (item) => activeCategory === "ALL" || item.category === activeCategory
   );
+
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedImage]);
 
   const handleCategoryChange = (cat: string) => {
     if (cat === activeCategory || isTransitioning) return;
@@ -141,14 +152,14 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="work" className="py-32 px-4 md:px-8 lg:px-12 bg-[#0a0807] relative z-10 overflow-hidden">
+    <section id="work" className="py-32 px-4 md:px-8 lg:px-12 bg-[#0D0A08] relative z-10 overflow-hidden">
       <div className="absolute top-20 left-6 md:left-12 z-20 font-sans text-xs tracking-widest text-gold/60 uppercase">
         03 — THE COLLECTION
       </div>
       
       <div className="max-w-[1400px] mx-auto mt-16" ref={filterContainerRef}>
         <h2 className="text-center font-serif text-4xl md:text-6xl text-foreground mb-16">
-          Selected Works
+          Hand Mandalas Collection
         </h2>
 
         {/* Filters */}
@@ -216,12 +227,13 @@ export default function Portfolio() {
                   </div>
 
                   <div className="w-full h-full relative overflow-hidden rounded-sm">
-                    <div className="absolute inset-0 bg-[#2a1b12]" />
+                    <div className="absolute inset-0 bg-[#21150F]" />
                     <motion.img
                       layoutId={`img-${item.src}`}
                       src={item.src}
                       alt={item.category}
                       className="w-full h-full object-cover transition-transform duration-[10000ms] ease-out group-hover:scale-105"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0'; }}
                     />
                     <div className="cinematic-image-layer z-10" />
                     

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import HandMandalasLogo from "@/components/ui/HandMandalasLogo";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,14 +43,24 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out py-6 px-6 md:px-12",
           isScrolled
-            ? "bg-[#0f0d0b]/40 backdrop-blur-md border-b border-gold/5 py-4"
+            ? "bg-[#0D0A08]/40 backdrop-blur-md border-b border-gold/5 py-4"
             : "bg-transparent",
           isMenuOpen ? "bg-transparent backdrop-blur-none border-transparent" : ""
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="text-foreground font-serif tracking-widest text-xl uppercase relative z-50">
-            AM.
+          <div className="relative z-50 flex items-center gap-3">
+            <a href="#" className="flex items-center gap-3 group">
+              <HandMandalasLogo iconOnly={true} className="text-gold group-hover:rotate-[15deg] transition-transform duration-700" />
+              <div className="hidden md:flex flex-col">
+                <span className="font-serif text-lg tracking-[0.2em] text-foreground">
+                  HAND MANDALAS
+                </span>
+                <span className="font-sans text-[10px] tracking-widest text-gold italic opacity-90 uppercase">
+                  By Srijana
+                </span>
+              </div>
+            </a>
           </div>
           
           <div className="hidden md:flex items-center space-x-10 text-xs tracking-widest uppercase text-foreground/80">
@@ -89,7 +100,7 @@ export default function Navbar() {
             animate={{ opacity: 1, clipPath: "circle(150% at 100% 0%)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 100% 0%)" }}
             transition={{ duration: 0.7, ease: [0.32, 0, 0.67, 0] }}
-            className="fixed inset-0 z-40 bg-[#0a0807] flex flex-col justify-center px-8 md:hidden overflow-hidden"
+            className="fixed inset-0 z-40 bg-[#0D0A08] flex flex-col justify-center px-8 md:hidden overflow-hidden"
           >
             {/* Background motif for menu */}
             <svg viewBox="0 0 100 100" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] opacity-5 pointer-events-none" fill="none" stroke="var(--gold)" strokeWidth="0.2">

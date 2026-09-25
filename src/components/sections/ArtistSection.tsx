@@ -103,7 +103,7 @@ export default function ArtistSection() {
   }, [mounted]);
 
   return (
-    <section ref={containerRef} id="artist" className="relative w-full min-h-[120vh] bg-[#0f0d0b] py-32 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden border-y border-gold/5">
+    <section ref={containerRef} id="artist" className="relative w-full min-h-[120vh] bg-[#0D0A08] py-32 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden border-y border-gold/5">
       
       <div className="absolute top-20 left-6 md:left-12 z-20 font-sans text-xs tracking-widest text-gold/60 uppercase">
         01 — THE ARTIST
@@ -124,7 +124,7 @@ export default function ArtistSection() {
         </div>
 
         {/* Portrait Image Wrapper */}
-        <div className="artist-img-wrapper absolute inset-0 z-10 overflow-hidden bg-[#0a0807] transition-all duration-700 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.1)]">
+        <div className="artist-img-wrapper absolute inset-0 z-10 overflow-hidden bg-[#0D0A08] transition-all duration-700 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.1)]">
           <img
             src={siteImages.artist.main}
             alt={artistConfig.artistName}
@@ -137,11 +137,8 @@ export default function ArtistSection() {
         {/* Signature Overlay (Rule 38) */}
         <div className="artist-signature absolute inset-0 z-30 pointer-events-none flex items-center justify-center -rotate-6 scale-110 opacity-80 mix-blend-difference drop-shadow-2xl">
           <svg ref={signatureRef} viewBox="0 0 400 200" className="w-full h-full">
-            <text x="50%" y="45%" textAnchor="middle" className="font-serif italic text-6xl" stroke="#fff" strokeWidth="1" fill="#fff">
-              Cussent
-            </text>
-            <text x="60%" y="65%" textAnchor="middle" className="font-serif italic text-6xl" stroke="#fff" strokeWidth="1" fill="#fff">
-              Mayya
+            <text x="50%" y="55%" textAnchor="middle" className="font-serif italic text-6xl" stroke="#fff" strokeWidth="1" fill="#fff">
+              Srijana
             </text>
           </svg>
         </div>

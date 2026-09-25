@@ -45,7 +45,7 @@ export default function StyleExplorer() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative w-full py-32 bg-[#0a0807] overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
+    <section className="relative w-full py-32 bg-[#0D0A08] overflow-hidden flex flex-col items-center justify-center min-h-[80vh]">
       <style dangerouslySetInnerHTML={{__html: `
         .style-path {
           transition: stroke-dashoffset 1.5s cubic-bezier(0.22, 1, 0.36, 1);

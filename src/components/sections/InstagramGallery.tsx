@@ -52,7 +52,7 @@ export default function InstagramGallery() {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-32 px-4 md:px-12 bg-[#0a0807] border-t border-gold/10 overflow-hidden">
+    <section ref={containerRef} className="py-32 px-4 md:px-12 bg-[#0D0A08] border-t border-gold/10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         
         <div className="flex flex-col items-center mb-24">
@@ -80,7 +80,7 @@ export default function InstagramGallery() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "insta-img-wrapper relative group overflow-hidden bg-[#2a1b12] cursor-none",
+                  "insta-img-wrapper relative group overflow-hidden bg-[#21150F] cursor-none",
                   i === 0 ? "aspect-[3/4]" : "aspect-square"
                 )}
                 data-cursor="view"
@@ -105,7 +105,7 @@ export default function InstagramGallery() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "insta-img-wrapper relative group overflow-hidden bg-[#2a1b12] cursor-none",
+                  "insta-img-wrapper relative group overflow-hidden bg-[#21150F] cursor-none",
                   i === 0 ? "aspect-[4/5]" : "aspect-[3/4]"
                 )}
                 data-cursor="view"
@@ -130,7 +130,7 @@ export default function InstagramGallery() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "insta-img-wrapper relative group overflow-hidden bg-[#2a1b12] cursor-none",
+                  "insta-img-wrapper relative group overflow-hidden bg-[#21150F] cursor-none",
                   i === 0 ? "aspect-square" : "aspect-[4/5]"
                 )}
                 data-cursor="view"

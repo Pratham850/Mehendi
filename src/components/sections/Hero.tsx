@@ -83,19 +83,19 @@ export default function Hero() {
       // 4. SVG Text Drawing (Brand Name)
       const textLines = textSvgRef.current?.querySelectorAll("text");
       if (textLines) {
-        gsap.set(textLines, { strokeDasharray: 800, strokeDashoffset: 800, fillOpacity: 0 });
+        gsap.set(textLines, { strokeDasharray: 800, strokeDashoffset: 800 });
         
         // Draw outline
-        tl.to(textLines, {
-          strokeDashoffset: 0,
+        tl.from(textLines, {
+          strokeDashoffset: 800,
           duration: 3,
           ease: "power2.inOut",
           stagger: 0.4,
         }, "-=1");
 
         // Fill in
-        tl.to(textLines, {
-          fillOpacity: 1,
+        tl.from(textLines, {
+          fillOpacity: 0,
           duration: 1.5,
           ease: "power2.out",
           stagger: 0.2,
@@ -127,25 +127,25 @@ export default function Hero() {
         ease: "none",
       });
 
-      // Play on loader complete
-      const handleLoaderComplete = () => tl.play();
+      // Play on intro complete
+      const handleIntroComplete = () => tl.play();
       
-      if (sessionStorage.getItem("hasVisited") === "true") {
+      if (sessionStorage.getItem("hasVisitedIntro") === "true") {
         setTimeout(() => tl.play(), 500);
       }
       
-      window.addEventListener("loaderComplete", handleLoaderComplete);
-      return () => window.removeEventListener("loaderComplete", handleLoaderComplete);
+      window.addEventListener("introComplete", handleIntroComplete);
+      return () => window.removeEventListener("introComplete", handleIntroComplete);
     }, container);
 
     return () => ctx.revert();
   }, [mounted]);
 
   return (
-    <section ref={container} className="relative w-full min-h-screen overflow-hidden bg-[#0f0d0b] flex items-center">
+    <section ref={container} className="relative w-full min-h-screen overflow-hidden bg-[#0D0A08] flex items-center">
       
       {/* Absolute Background Mandala */}
-      <div className="hero-bg absolute inset-0 z-0 flex items-center justify-end pointer-events-none opacity-0 pr-0 md:-mr-[20vw]">
+      <div className="hero-bg absolute inset-0 z-0 flex items-center justify-end pointer-events-none pr-0 md:-mr-[20vw]">
         <svg viewBox="0 0 100 100" className="hero-mandala w-[120vw] h-[120vw] md:w-[70vw] md:h-[70vw] max-w-none opacity-5" fill="none" stroke="var(--gold)" strokeWidth="0.1">
           <circle cx="50" cy="50" r="40" strokeDasharray="1 2" />
           <circle cx="50" cy="50" r="30" />
@@ -164,7 +164,7 @@ export default function Hero() {
         <div className="parallax-text w-full md:w-[45%] flex flex-col justify-center items-start pt-20 md:pt-0">
           
           <div className="hero-eyebrow text-gold text-xs tracking-[0.3em] uppercase mb-8">
-            More Than Mehendi
+            Art On Hands · Stories On Skin
           </div>
 
           <div className="w-full max-w-xl aspect-[2/1] relative mb-10">
@@ -174,28 +174,25 @@ export default function Hero() {
               className="w-full h-full drop-shadow-2xl overflow-visible"
               preserveAspectRatio="xMinYMid meet"
             >
-              <text x="0" y="30%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)]" stroke="var(--foreground)" strokeWidth="1.5" fill="var(--foreground)">
-                CUSSENT
+              <text x="0" y="45%" textAnchor="start" className="font-serif italic text-[clamp(3.5rem,15vw,8rem)]" stroke="var(--foreground)" strokeWidth="1.5" fill="var(--foreground)">
+                HAND
               </text>
-              <text x="0" y="65%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)]" stroke="var(--foreground)" strokeWidth="1.5" fill="var(--foreground)">
-                MAYYA&apos;S
-              </text>
-              <text x="0" y="100%" textAnchor="start" className="font-serif italic text-[clamp(2.5rem,13vw,7rem)] text-gold" stroke="var(--gold)" strokeWidth="1.5" fill="var(--gold)">
-                MEHENDI
+              <text x="0" y="95%" textAnchor="start" className="font-serif italic text-[clamp(3.5rem,15vw,8rem)] text-gold" stroke="var(--gold)" strokeWidth="1.5" fill="var(--gold)">
+                MANDALAS
               </text>
             </svg>
           </div>
 
           <p className="hero-tagline font-sans text-xs md:text-sm tracking-[0.3em] text-foreground/80 uppercase mb-16 leading-loose max-w-md">
-            Where every line<br />becomes a memory.
+            More than Mehendi,<br />it&apos;s your story.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">
             <a href="#work" data-cursor="hover" className="hero-btn group relative px-10 py-4 text-xs md:text-sm tracking-widest text-foreground border border-gold/40 hover:border-gold transition-all duration-700 rounded-sm text-center">
               <span className="relative z-10 uppercase">Explore My Work</span>
             </a>
-            <a href="#book" data-cursor="book" className="hero-btn group relative px-10 py-4 text-xs md:text-sm tracking-widest text-[#0f0d0b] bg-gold hover:bg-[#e0b472] transition-all duration-700 hover:scale-[1.02] rounded-sm text-center">
-              <span className="relative z-10 uppercase font-medium">Book an Appointment</span>
+            <a href="#book" data-cursor="book" className="hero-btn group relative px-10 py-4 text-xs md:text-sm tracking-widest text-[#0D0A08] bg-gold hover:bg-[#E0BD78] transition-all duration-700 hover:scale-[1.02] rounded-sm text-center">
+              <span className="relative z-10 uppercase font-medium">Book Your Mehendi</span>
             </a>
           </div>
         </div>
@@ -212,6 +209,7 @@ export default function Hero() {
               src={siteImages.hero.main}
               alt="Cinematic Mehendi Art"
               className="parallax-img hero-img absolute inset-0 w-[110%] h-[110%] -top-[5%] -left-[5%] object-cover z-10"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = '0'; }}
             />
             <div className="cinematic-image-layer z-10" />
 

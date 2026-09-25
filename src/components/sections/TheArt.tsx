@@ -62,7 +62,7 @@ export default function TheArt() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen bg-[#0a0807] flex items-center justify-center overflow-hidden">
+    <section ref={containerRef} className="relative w-full h-screen bg-[#0D0A08] flex items-center justify-center overflow-hidden">
       
       {/* Background SVG Pattern */}
       <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">

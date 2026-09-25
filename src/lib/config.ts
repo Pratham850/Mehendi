@@ -1,7 +1,7 @@
 export const artistConfig = {
-  brandName: "Cussent Mayya's Mehendi",
-  artistName: "Cussent Mayya",
-  tagline: "Where every line becomes a memory.",
+  brandName: "Hand Mandalas",
+  artistName: "Srijana",
+  tagline: "More than Mehendi, it's your story.",
   bio: "Every design begins with a thought, a story and a single line. My work is about turning those moments into something you can carry with you.",
   stats: [
     { value: "500+", label: "BRIDES" },
@@ -49,8 +49,8 @@ export const artistConfig = {
   ],
   contact: {
     whatsapp: "6282076811",
-    email: "hello@cussentmayya.com",
-    instagram: "@cussentmayyasmehandi",
+    email: "hello@handmandalas.com",
+    instagram: "@handmandalas",
     location: "New York & Worldwide"
   }
 };
